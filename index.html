@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TV Screens</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #f7f7f7;
+  color: #111;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.menu {
+  display: flex;
+  gap: 28px;
+  font-size: 15px;
+  color: #333;
+}
+
+.menu a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* TITLE */
+.header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.header h1 {
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+/* CONTENT */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.article {
+  padding: 24px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.article h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.meta {
+  font-size: 13px;
+  color: #777;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .header h1 {
+    font-size: 18px;
+  }
+
+  .article h2 {
+    font-size: 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">IT Division
+  </div>
+  <div class="menu">
+      <a href="index.html">Home</a>
+    <a href="https://binusianorg-my.sharepoint.com/personal/sdp_csm_kemanggisan_binus_edu/_layouts/15/guestaccess.aspx?share=IQBPqqw7Y7xnS6FIm_rqcKvXAVytTkVcMOKPMwLsA2M0eFs&e=qM0oTY">Polycom X50</a>
+    <a href="access_wifi.html">Wifi Access</a>
+    
+      </div>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>TV SCREENS</h1>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+ <div class="article">
+  <h2>
+    <a href="panduan_Apple.html">
+      How do I connect to a meeting room TV via Device Macbook, iPad, iPhone?
+    </a>
+  </h2>
+</div>
+
+ <div class="article">
+  <h2>
+    <a href="panduan_windows.html">
+      How do I connect to a meeting room TV via Device Windows?
+    </a>
+  </h2>
+</div>
+
+  <div class="article">
+  <h2>
+    <a href="sharingZoom.html">
+      How do I connect to a meeting room TV via Apps Zoom?
+    </a>
+  </h2>
+</div>
+
+  
+
+</div>
+
+</body>
+</html>
