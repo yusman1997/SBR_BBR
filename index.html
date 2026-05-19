@@ -1,166 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>TV Screens</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="style.css">
+
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+
+body{
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background:#f4f4f4;
 }
 
-body {
-  background: #f7f7f7;
-  color: #111;
+.navbar{
+  background:#0f172a;
+  color:white;
+  padding:15px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
 }
 
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 40px;
-  border-bottom: 1px solid #ddd;
-  background: #fff;
+.logo{
+  font-weight:700;
+  font-size:20px;
 }
 
-.logo {
-  font-size: 28px;
-  font-weight: 700;
+.menu{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
 }
 
-.menu {
-  display: flex;
-  gap: 28px;
-  font-size: 15px;
-  color: #333;
+.menu a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  font-size:15px;
 }
 
-.menu a {
-  text-decoration: none;
-  color: inherit;
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:30px;
 }
 
-/* TITLE */
-.header {
-  text-align: center;
-  padding: 40px 20px 20px;
+.header{
+  margin-top:30px;
+  margin-bottom:20px;
 }
 
-.header h1 {
-  font-size: 22px;
-  letter-spacing: 2px;
+.header h1{
+  color:#0f172a;
+  font-size:32px;
 }
 
-/* CONTENT */
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
+.article{
+  background:white;
+  padding:20px;
+  border-radius:14px;
+  margin-bottom:20px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  transition:0.2s;
 }
 
-.article {
-  padding: 24px 0;
-  border-bottom: 1px solid #e5e5e5;
+.article:hover{
+  transform:translateY(-3px);
 }
 
-.article h2 {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  cursor: pointer;
+.article a{
+  text-decoration:none;
+  color:#111827;
 }
 
-.meta {
-  font-size: 13px;
-  color: #777;
+.article h2{
+  margin:0;
+  font-size:20px;
+  line-height:1.5;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+.lang-switch{
+  margin-left:20px;
+}
+
+.lang-switch button{
+  padding:8px 12px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  margin-left:5px;
+  font-weight:600;
+}
+
+.lang-switch button:hover{
+  opacity:0.9;
+}
+
+@media(max-width:768px){
+
+  .navbar{
+    flex-direction:column;
+    align-items:flex-start;
   }
 
-  .menu {
-    flex-wrap: wrap;
-    gap: 12px;
+  .menu{
+    margin-top:15px;
   }
 
-  a {
-    color: black;          /* warna teks */
-    text-decoration: none; /* hilangkan garis bawah */
-}
-  .header h1 {
-    font-size: 18px;
+  .menu a{
+    margin-left:0;
+    margin-right:15px;
+    margin-bottom:10px;
   }
 
-  .article h2 {
-    font-size: 18px;
+  .lang-switch{
+    margin-left:0;
   }
+
 }
+
 </style>
+
 </head>
 
 <body>
 
 <!-- NAVBAR -->
 <div class="navbar">
-  <div class="logo">IT Division
-  </div>
-  <div class="menu">
-     <a href="index.html">Home</a>
-    <a href="polycom.html">Polycom X50</a>
-    <a href="access_wifi.html">Access WiFi</a>
-    
-      </div>
-</div>
 
-<!-- HEADER -->
-<div class="header">
-  <h1>Meeting Onsite</h1>
+  <div class="logo">
+    IT Division
+  </div>
+
+  <div class="menu">
+
+    <a href="index.html" id="navHome">
+      Home
+    </a>
+
+    <a href="polycom.html" id="navPolycom">
+      Poly Studio X50 User Guide
+    </a>
+
+    <a href="access_wifi.html" id="navWifi">
+      How to Connect to Wi-Fi
+    </a>
+
+    <span class="lang-switch">
+      <button onclick="setLanguage('en')">EN</button>
+      <button onclick="setLanguage('id')">ID</button>
+    </span>
+
+  </div>
+
 </div>
 
 <!-- CONTENT -->
 <div class="container">
 
- <div class="article">
-  <h2>
-    <a href="panduan_Apple.html">
-      How do I connect to a meeting room TV via Device Macbook, iPad, iPhone?
-    </a>
-  </h2>
-</div>
+  <!-- ONSITE -->
+  <div class="header">
+    <h1 id="onsiteTitle">
+      Meeting Onsite
+    </h1>
+  </div>
 
- <div class="article">
-  <h2>
-    <a href="panduan_windows.html">
-      How do I connect to a meeting room TV via Device Windows?
-    </a>
-  </h2>
-</div>
-<div class="header">
-  <h1>Meeting Hybrid</h1>
-</div>
+  <!-- ARTICLE 1 -->
   <div class="article">
-  <h2>
-    <a href="sharingZoom.html">
-      How do I connect to a meeting room TV via Apps Zoom?
-    </a>
-  </h2>
+    <h2>
+      <a href="panduan_Apple.html" id="article1">
+        How do I connect to a meeting room TV via Device MacBook, iPad, iPhone?
+      </a>
+    </h2>
+  </div>
+
+  <!-- ARTICLE 2 -->
+  <div class="article">
+    <h2>
+      <a href="panduan_windows.html" id="article2">
+        How do I connect to a meeting room TV via Device Windows?
+      </a>
+    </h2>
+  </div>
+
+  <!-- HYBRID -->
+  <div class="header">
+    <h1 id="hybridTitle">
+      Meeting Hybrid
+    </h1>
+  </div>
+
+  <!-- ARTICLE 3 -->
+  <div class="article">
+    <h2>
+      <a href="polycom.html" id="article3">
+        How do I connect to a meeting room TV via Apps Zoom?
+      </a>
+    </h2>
+  </div>
+
 </div>
 
-  
+<script>
 
-</div>
+function setLanguage(lang){
+
+  const text = {
+
+    en: {
+
+      /* NAVBAR */
+      navHome: "Home",
+      navPolycom: "Poly Studio X50 User Guide",
+      navWifi: "How to Connect to Wi-Fi",
+
+      /* SECTION */
+      onsiteTitle: "Meeting Onsite",
+
+      article1:
+      "How do I connect to a meeting room TV via Device MacBook, iPad, iPhone?",
+
+      article2:
+      "How do I connect to a meeting room TV via Device Windows?",
+
+      hybridTitle: "Meeting Hybrid",
+
+      article3:
+      "How do I connect to a meeting room TV via Apps Zoom?"
+    },
+
+    id: {
+
+      /* NAVBAR */
+      navHome: "Beranda",
+      navPolycom: "Panduan Pengguna Poly Studio X50",
+      navWifi: "Cara Menghubungkan ke Wi-Fi",
+
+      /* SECTION */
+      onsiteTitle: "Meeting Onsite",
+
+      article1:
+      "Bagaimana cara menghubungkan perangkat MacBook, iPad, atau iPhone ke TV ruang meeting?",
+
+      article2:
+      "Bagaimana cara menghubungkan perangkat Windows ke TV ruang meeting?",
+
+      hybridTitle: "Meeting Hybrid",
+
+      article3:
+      "Bagaimana cara menghubungkan TV ruang meeting melalui aplikasi Zoom?"
+    }
+  };
+
+  for(const key in text[lang]){
+    document.getElementById(key).innerHTML = text[lang][key];
+  }
+
+}
+
+</script>
 
 </body>
 </html>
