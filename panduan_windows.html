@@ -1,218 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How do I connect to a meeting room TV?</title>
+  <meta charset="UTF-8">
+  <title>Connecting Your Device</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-}
+  <style>
 
-body {
-  background: #f7f7f7;
-  color: #111;
-}
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#f4f4f4;
+    }
 
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 40px;
-  border-bottom: 1px solid #ddd;
-  background: #fff;
-}
+    .navbar{
+      background:#0f172a;
+      color:white;
+      padding:15px 30px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
 
-.logo {
-  font-size: 28px;
-  font-weight: 700;
-}
+    .logo{
+      font-size:20px;
+      font-weight:bold;
+    }
 
-.menu {
-  display: flex;
-  gap: 28px;
-  font-size: 15px;
-}
+    .menu{
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+    }
 
-.menu a {
-  text-decoration: none;
-  color: #333;
-}
+    .menu a{
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      font-size:15px;
+    }
 
-/* MAIN LAYOUT */
-.wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 30px 20px;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
-}
+    .lang-switch{
+      margin-left:20px;
+    }
 
-/* LEFT CONTENT */
-.breadcrumb {
-  font-size: 12px;
-  color: #3b82f6;
-  margin-bottom: 16px;
-  text-transform: uppercase;
-}
+    .lang-switch button{
+      padding:8px 12px;
+      border:none;
+      border-radius:6px;
+      cursor:pointer;
+      margin-left:5px;
+      font-weight:bold;
+    }
 
-.title {
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
+    .container{
+      max-width:900px;
+      margin:auto;
+      background:white;
+      padding:30px;
+    }
 
-.content p {
-  margin-bottom: 16px;
-  line-height: 1.6;
-}
+    .step{
+      background:#f8fafc;
+      padding:15px;
+      border-radius:10px;
+      margin-bottom:20px;
+    }
 
-.content h3 {
-  margin-top: 24px;
-  margin-bottom: 12px;
-  font-size: 18px;
-}
+    img{
+      border-radius:10px;
+      margin-top:10px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    }
 
-.content ul {
-  margin-left: 20px;
-  margin-bottom: 16px;
-}
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#0f172a;
+      color:white;
+      margin-top:30px;
+    }
 
-.content li {
-  margin-bottom: 8px;
-}
+    @media(max-width:768px){
 
-.content a {
-  color: #2563eb;
-  text-decoration: none;
-}
+      .navbar{
+        flex-direction:column;
+        align-items:flex-start;
+      }
 
-.content a:hover {
-  text-decoration: underline;
-}
+      .menu{
+        margin-top:15px;
+      }
 
-/* IMAGE */
-.content img {
-  width: 100%;
-  margin-top: 16px;
-  border-radius: 8px;
-}
+      .menu a{
+        margin-left:0;
+        margin-right:15px;
+        margin-bottom:10px;
+      }
 
-/* SIDEBAR */
-.sidebar {
-  padding-top: 40px;
-}
+      .lang-switch{
+        margin-left:0;
+        margin-top:10px;
+      }
 
-.sidebar h4 {
-  margin-bottom: 16px;
-  font-size: 16px;
-}
+    }
 
-.related-item {
-  padding: 12px 0;
-  border-bottom: 1px solid #e5e5e5;
-  font-size: 14px;
-  cursor: pointer;
-}
+  </style>
 
-.related-item:hover {
-  color: #2563eb;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .title {
-    font-size: 24px;
-  }
-
-  .sidebar {
-    padding-top: 20px;
-  }
-}
-</style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-  <div class="logo">IT Division
+<header>
+
+  <div class="navbar">
+
+    <div class="logo">
+      IT Division
+    </div>
+
+    <div class="menu">
+
+      <a href="index.html" id="navHome">
+        Home
+      </a>
+
+      <a href="polycom.html" id="navPolycom">
+        Poly Studio X50 User Guide
+      </a>
+
+      <a href="access_wifi.html" id="navWifi">
+        How to Connect to Wi-Fi
+      </a>
+
+      <span class="lang-switch">
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('id')">ID</button>
+      </span>
+
+    </div>
+
   </div>
-  <div class="menu">
-  <a href="index.html">Home</a>
-    <a href="polycom.html">Polycom X50</a>
-    <a href="access_wifi.html">Access WiFi</a>
+
+</header>
+
+<div class="container">
+
+  <h1 id="title">
+    How do I connect to a meeting room TV?
+  </h1>
+
+  <p id="intro">
+    You can connect to the meeting room TV via Windows
+  </p>
+
+  <h2 id="checkTitle">
+    What do I need to check first?
+  </h2>
+
+  <ul>
+
+    <li id="check1">
+      Connect to one of the following Wi-Fi networks:
+      <a href="access_wifi.html">How to Connect to Wi-Fi</a>
+    </li>
+
+    <li id="check2">
+     The device is already connected to the Wi-Fi network, Please make sure it is not connected to a VPN.
+    </li>
+
+    <li id="check3">
+      Ensure the meeting room system is turned on
+    </li>
+
+  </ul>
+
+  <h3 id="windowsTitle">
+    Connecting to the TV in a meeting room via Windows
+  </h3>
+
+  <h2 id="stepsTitle">
+    Steps to connect
+  </h2>
+
+  <!-- STEP 1 -->
+
+  <div class="step">
+
+    <strong>Step 1:</strong><br>
+
+    <span id="step1">
+      Press the Windows key + K on your keyboard
+    </span>
+
   </div>
+
+  <!-- STEP 2 -->
+
+  <div class="step">
+
+    <strong>Step 2:</strong><br>
+
+    <span id="step2">
+      The Cast panel will appear on the right side of the screen
+    </span>
+
+  </div>
+
+  <!-- STEP 3 -->
+
+  <div class="step">
+
+    <strong>Step 3:</strong><br>
+
+    <span id="step3">
+      Select the device named TV (SBR-SmartTV)
+    </span>
+
+    <p>
+      <img src="img/1win.png"
+           style="width:80%; max-width:500px;">
+    </p>
+
+  </div>
+
+  <!-- STEP 4 -->
+
+  <div class="step">
+
+    <strong>Step 4:</strong><br>
+
+    <span id="step4">
+      A notification will appear on the TV screen.
+      Please select Allow using the TV remote to verify the connection
+    </span>
+
+    <p>
+      <img src="img/2win.png"
+           style="width:80%; max-width:500px;">
+    </p>
+
+  </div>
+
+  <!-- STEP 5 -->
+
+  <div class="step">
+
+    <strong>Step 5:</strong><br>
+
+    <span id="step5">
+      Your screen will be displayed on the TV
+    </span>
+
+  </div>
+
+  <!-- TIPS -->
+
+  <h2 id="tipsTitle">
+    Tips
+  </h2>
+
+  <ul>
+
+    
+
+    <li id="tip2">
+      Check network connection
+    </li>
+
+    <li id="tip3">
+      Restart device if connection fails
+    </li>
+
+  </ul>
+
 </div>
 
-<!-- MAIN -->
-<div class="wrapper">
+<footer>
+  © 2026
+</footer>
 
-  <!-- LEFT -->
-  <div class="content">
-    <div class="breadcrumb">IT Infra & IT Support KMG</div>
+<script>
 
-    <div class="title">How do I connect to a meeting room TV?</div>
+function setLanguage(lang){
 
-    <p>You can connect to the meeting room TV via Device Windows</p>
+  const text = {
 
-    <h3>What do I need to check first?</h3>
-    <ul>
-      <li> Ensure the TV is powered on.</li>
-            <li>Connect to one of the following Wi-Fi networks:
-        <ul>
-          <li><a href="access_wifi.html">Access Wifi</a></li>
-                  </ul>
-      </li>
-      <li>Ensure you disconnect any VPNs.</li>
-    </ul>
+    en: {
 
-    <p><i>The device is already connected to the Wi-Fi network. Please make sure it is not connected to a VPN, as it will not be able to connect to the meeting room TV.</i></p>
+      /* NAVBAR */
+      navHome: "Home",
+      navPolycom: "Poly Studio X50 User Guide",
+      navWifi: "How to Connect to Wi-Fi",
 
-    <h3>Connecting to the TV in a meeting room Screen Mirroring Via Windows?</h3>
-    <p>1. Press the Windows key + K on your keyboard.</p>
-    <p>2. The Cast panel will appear on the right side of the screen.</p>
-    <p>3. Select the device named SBR-SmartTV.</p>
-    <p> <img src="img/1win.png" class="rounded-xl mb-4 shadow"></p>
-     <p>4. A notification will appear on the TV screen. Please select Allow using the TV remote to verify the connection.</p>
-    <p> <img src="img/2win.png" class="rounded-xl mb-4 shadow" style="width: 70%; max-width: 300px;"</p>
-    <p>5. Your screen will be displayed on the TV.</p>
-       
-     
+      /* PAGE */
+      title:
+      "How do I connect to a meeting room TV?",
 
-  </div>
+      intro:
+      "You can connect to the meeting room TV via Windows",
 
-  <!-- RIGHT -->
-  <div class="sidebar">
-    <h4>Related Articles</h4>
+      checkTitle:
+      "What do I need to check first?",
 
-    <div class="related-item">How do I connect my device to WiFi?</div>
-    <div class="related-item">How do I connect to Wi-Fi?</div>
-    <div class="related-item">How do I book a meeting room?</div>
-    <div class="related-item">Connecting Apple device via AirPlay</div>
-    <div class="related-item">Connecting laptop via Solstice</div>
+      check1:
+      'Connect to one of the following Wi-Fi networks: <a href="access_wifi.html">Access Wifi</a>',
 
-  </div>
+      check2:
+      "The device is already connected to the Wi-Fi network. Please make sure it is not connected to a VPN, as it will not be able to connect to the meeting room TV.",
 
-</div>
+      check3:
+      "Ensure the meeting room system is turned on",
+
+      windowsTitle:
+      "Connecting to the TV in a meeting room via Windows",
+
+      stepsTitle:
+      "Steps to connect",
+
+      step1:
+      "Press the Windows key + K on your keyboard",
+
+      step2:
+      "The Cast panel will appear on the right side of the screen",
+
+      step3:
+      "Select the device named TV (SBR-SmartTV)",
+
+      step4:
+      "A notification will appear on the TV screen. Please select Allow using the TV remote to verify the connection",
+
+      step5:
+      "Your screen will be displayed on the TV",
+
+      tipsTitle:
+      "Tips",
+
+      
+
+      tip2:
+      "Check network connection",
+
+      tip3:
+      "Restart device if connection fails"
+    },
+
+    id: {
+
+      /* NAVBAR */
+      navHome: "Beranda",
+      navPolycom: "Panduan Poly Studio X50",
+      navWifi: "Cara Menghubungkan ke Wi-Fi",
+
+      /* PAGE */
+      title:
+      "Bagaimana cara menghubungkan ke TV ruang meeting?",
+
+      intro:
+      "Anda dapat menghubungkan perangkat ke TV ruang meeting melalui Windows",
+
+      checkTitle:
+      "Apa yang perlu diperiksa terlebih dahulu?",
+
+      check1:
+      'Hubungkan ke salah satu jaringan Wi-Fi berikut: <a href="access_wifi.html">Access Wifi</a>',
+
+      check2:
+      "Perangkat sudah terhubung ke jaringan Wi-Fi, Pastikan perangkat tidak terhubung ke VPN.",
+
+      check3:
+      "Pastikan sistem meeting room sudah menyala",
+
+      windowsTitle:
+      "Menghubungkan ke TV ruang meeting melalui Windows",
+
+      stepsTitle:
+      "Langkah-langkah koneksi",
+
+      step1:
+      "Tekan tombol Windows + K pada keyboard",
+
+      step2:
+      "Panel Cast akan muncul di sisi kanan layar",
+
+      step3:
+      "Pilih perangkat dengan nama TV (SBR-SmartTV)",
+
+      step4:
+      "Notifikasi akan muncul pada layar TV. Silakan pilih Allow menggunakan remote TV untuk memverifikasi koneksi",
+
+      step5:
+      "Layar perangkat akan tampil di TV",
+
+      tipsTitle:
+      "Tips",
+
+      
+
+      tip2:
+      "Periksa koneksi jaringan",
+
+      tip3:
+      "Restart perangkat jika koneksi gagal"
+    }
+
+  };
+
+  for(const key in text[lang]){
+    document.getElementById(key).innerHTML = text[lang][key];
+  }
+
+}
+
+</script>
 
 </body>
 </html>
