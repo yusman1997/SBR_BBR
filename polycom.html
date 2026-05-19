@@ -2,160 +2,373 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Connecting Your Device</title>
+  <title>Guideline Poly Studio X50</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
+  <link rel="stylesheet" href="style.css">
+
   <style>
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #f7f7f7;
-      color: #333;
+      background: #f4f4f4;
     }
 
+    .navbar {
+      background: #0f172a;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 15px;
+    }
 
     .container {
       max-width: 900px;
-      margin: 30px auto;
+      margin: auto;
       background: white;
       padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-
-    h1 {
-      margin-top: 0;
-    }
-
-    h2 {
-      margin-top: 30px;
-      border-left: 4px solid #000;
-      padding-left: 10px;
-    }
-
-    p {
-      line-height: 1.6;
-    }
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 40px;
-  border-bottom: 1px solid #ddd;
-  background: #fff;
-}
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 10px;
     }
 
     .step {
-      background: #f0f0f0;
+      background: #f8fafc;
       padding: 15px;
-      border-radius: 6px;
-      margin-bottom: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
     }
 
-    
+    img {
+      border-radius: 10px;
+      margin-top: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
 
     footer {
       text-align: center;
       padding: 20px;
-      font-size: 14px;
-      color: #888;
+      background: #0f172a;
+      color: white;
+      margin-top: 30px;
+    }
+
+    .lang-switch {
+      margin-left: 20px;
+    }
+
+    .lang-switch button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-left: 5px;
+      font-weight: bold;
+    }
+
+    .lang-switch button:hover {
+      opacity: 0.9;
+    }
+
+    @media(max-width:768px){
+
+      .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu{
+        margin-top: 15px;
+      }
+
+      .menu a{
+        margin-left: 0;
+        margin-right: 15px;
+        margin-bottom: 10px;
+      }
+
+      .lang-switch{
+        margin-left: 0;
+        margin-top: 10px;
+      }
+
     }
 
   </style>
 </head>
 
 <body>
-    
 
 <header>
- 
- <div class="navbar">
-  <div class="logo">IT Division
+
+  <div class="navbar">
+
+    <div class="logo">
+      IT Division
+    </div>
+
+    <div class="menu">
+
+      <a href="index.html" id="navHome">
+        Home
+      </a>
+
+      <a href="polycom.html" id="navPolycom">
+        Poly Studio X50 User Guide
+      </a>
+
+      <a href="access_wifi.html" id="navWifi">
+        How to Connect to Wi-Fi
+      </a>
+
+      <span class="lang-switch">
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('id')">ID</button>
+      </span>
+
+    </div>
+
   </div>
-  <div class="menu">
-     <a href="index.html">Home</a>
-    <a href="polycom.html">Polycom X50</a>
-    <a href="access_wifi.html">Access WiFi</a>
-    
-      </div>
-</div>
+
 </header>
 
 <div class="container">
 
-  <h1>Guideline Poly Studio X50</h1>
+  <h1 id="title">
+    Guideline Poly Studio X50
+  </h1>
 
-  <p>
-    Learn how to connect your laptop or mobile device to a meeting room 
-    equipped with video conferencing tools.
+  <p id="intro">
+    Learn how to connect your laptop or mobile device to a meeting room equipped with video conferencing tools.
   </p>
 
-  <h2>Before you begin</h2>
-  <ul>
-    <li>Make sure your device has Access Wi-Fi</li>
-    <li>Install your meeting app Zoom</li>
-    <li>Ensure the meeting room system is turned on</li>
-  </ul>
+  <h2 id="stepsTitle">
+    Steps to connect
+  </h2>
 
-  <h2>Steps to connect</h2>
+  <!-- STEP 1 -->
 
   <div class="step">
+
     <strong>Step 1:</strong><br>
-    Enter the meeting room and power on the display or conferencing system.
+
+    <span id="step1">
+      <ul>
+        <li>
+          If a Zoom Meeting ID has not been created, users can start a meeting directly using the “New Meeting” feature available on the Poly tab.
+        </li>
+      </ul>
+    </span>
+
+    <p>
+      <img src="img/Poly1.png"
+           style="width:80%; max-width:500px;">
+    </p>
+
+    <span id="step2">
+      <ul>
+        <li>
+          If a Meeting ID is already available, you can directly join the meeting through the Poly tab.
+        </li>
+      </ul>
+    </span>
+
+    <p>
+      <img src="img/poly2.png"
+           style="width:80%; max-width:500px;">
+    </p>
+
   </div>
 
+  <!-- STEP 2 -->
+
   <div class="step">
+
     <strong>Step 2:</strong><br>
-    New Meeting 
-    <p> <img src="img/Poly1.png" class="rounded-xl mb-4 shadow" style="width: 80%; max-width: 500px;"</p>
+
+    <span id="step3">
+      Camera Control
+    </span>
+
+    <p>
+      <img src="img/Poly6.png"
+           style="width:80%; max-width:500px;">
+    </p>
+
   </div>
 
+  <!-- STEP 3 -->
+
   <div class="step">
+
     <strong>Step 3:</strong><br>
-    Select <b>"Join Meeting"</b>
-    <p> <img src="img/poly2.png" class="rounded-xl mb-4 shadow" style="width: 80%; max-width: 500px;"</p>
+
+    <span id="step4">
+      Controller Zoom Room
+    </span>
+
+    <p>
+      <img src="img/poly3.png"
+           style="width:80%; max-width:500px;">
+    </p>
+
   </div>
+
+  <!-- STEP 4 -->
 
   <div class="step">
-    <strong>Step 4:</strong><br>
-    Controller Zoom Room
-    <p> <img src="img/poly3.png" class="rounded-xl mb-4 shadow" style="width: 80%; max-width: 500px;"</p>
+
+    <strong>Share Content (Optional):</strong><br>
+
+    <span id="step5">
+      Optional: For onsite meetings only (without Zoom participants), you can directly share your screen using the Share Content feature below. On the laptop that will be used for screen sharing, open the Zoom application, select Share Screen, then enter the sharing code displayed on the Share Content tab.
+    </span>
+
+    <p>
+      <img src="img/poly7.png"
+           style="width:80%; max-width:500px;">
+    </p>
+
   </div>
 
-  <div class="step">
-    <strong>Step 5:</strong><br>
-    Enable Share Screen
-    <p> <img src="img/poly4.png" class="rounded-xl mb-4 shadow" style="width: 80%; max-width: 500px;"</p>
-  </div>
-  <div class="step">
-    <strong>Step 6:</strong><br>
-    Join Teams Meeting
-    <p> <img src="img/poly5.png" class="rounded-xl mb-4 shadow" style="width: 80%; max-width: 500px;"</p>
-  </div>
+  <!-- TIPS -->
 
+  <h2 id="tipsTitle">
+    Tips
+  </h2>
 
-  <h2>Tips</h2>
   <ul>
-    <li>If device not detected, try manual connection</li>
-    <li>Check network connection</li>
-    <li>Restart device if connection fails</li>
+
+    <li id="tip2">
+      Check network connection
+    </li>
+
+    <li id="tip3">
+      Restart device if connection fails
+    </li>
+
   </ul>
 
 </div>
 
 <footer>
-  © 2026 
+  © 2026
 </footer>
 
+<script>
+
+function setLanguage(lang) {
+
+  const text = {
+
+    en: {
+
+      /* NAVBAR */
+      navHome: "Home",
+      navPolycom: "Poly Studio X50 User Guide",
+      navWifi: "How to Connect to Wi-Fi",
+
+      /* PAGE */
+      title: "Guideline Poly Studio X50",
+
+      intro:
+      "Learn how to connect your laptop or mobile device to a meeting room equipped with video conferencing tools.",
+
+      stepsTitle:
+      "Steps to connect",
+
+      step1:
+      "<ul><li>If a Zoom Meeting ID has not been created, users can start a meeting directly using the “New Meeting” feature available on the Poly tab.</li></ul>",
+
+      step2:
+      "<ul><li>If a Meeting ID is already available, you can directly join the meeting through the Poly tab.</li></ul>",
+
+      step3:
+      "Camera Control",
+
+      step4:
+      "Controller Zoom Room",
+
+      step5:
+      "Optional: For onsite meetings only (without Zoom participants), you can directly share your screen using the Share Content feature below. On the laptop that will be used for screen sharing, open the Zoom application, select Share Screen, then enter the sharing code displayed on the Share Content tab.",
+
+      tipsTitle:
+      "Tips",
+
+      tip2:
+      "Check network connection",
+
+      tip3:
+      "Restart device if connection fails"
+    },
+
+    id: {
+
+      /* NAVBAR */
+      navHome: "Beranda",
+      navPolycom: "Panduan Poly Studio X50",
+      navWifi: "Cara Menghubungkan ke Wi-Fi",
+
+      /* PAGE */
+      title: "Panduan Poly Studio X50",
+
+      intro:
+      "Pelajari cara menghubungkan laptop atau perangkat mobile ke ruang meeting yang dilengkapi perangkat video conference.",
+
+      stepsTitle:
+      "Langkah-langkah koneksi",
+
+      step1:
+      "<ul><li>Jika Zoom Meeting ID belum dibuat, pengguna dapat langsung memulai meeting menggunakan fitur “New Meeting” yang tersedia pada tab Poly.</li></ul>",
+
+      step2:
+      "<ul><li>Jika Meeting ID sudah tersedia, pengguna dapat langsung bergabung ke meeting melalui tab Poly.</li></ul>",
+
+      step3:
+      "Kontrol Kamera",
+
+      step4:
+      "Controller Zoom Room",
+
+      step5:
+      "Opsional: Khusus untuk meeting onsite tanpa peserta Zoom, Anda dapat langsung membagikan layar menggunakan fitur Share Content di bawah ini. Pada laptop yang akan digunakan untuk share screen, buka aplikasi Zoom, pilih Share Screen, lalu masukkan kode sharing yang muncul pada tab Share Content.",
+
+      tipsTitle:
+      "Tips",
+
+      tip2:
+      "Periksa koneksi jaringan",
+
+      tip3:
+      "Restart perangkat jika koneksi gagal"
+    }
+  };
+
+  for (const key in text[lang]) {
+    document.getElementById(key).innerHTML = text[lang][key];
+  }
+
+}
+
+</script>
+
 </body>
-</html> 
+</html>
